@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf8">
+	<title>Application</title>
+	<!-- Link to the css-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+
+	<link rel="stylesheet" type="text/css" href="">
+	<!-- script -->
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+	<script type="text/javascript" src="getPeople.js"></script>
+</head>
+<body ng-app="myApp">
+	<div id="content" class="container">
+		<div ng-controller="myAppCtl">
+			<h2>All entries in the database</h2>
+			<p>In this table all you will find all the entries stored in the database</p>
+			<table class="table">
+				<tr>
+					<!--<th>Id</th>-->
+					<th>Firstname</th>
+					<th>Lastname</th>
+					<th>Date of birth</th>
+					<th>Address</th>
+				</tr>
+				<tr ng-repeat="p in people">
+					<!--<td>{{p.id}}</td>-->
+					<td>{{p.firstName}}</td>
+					<td>{{p.lastName}}</td>
+					<td>{{p.dateOfBirthday}}</td>
+					<td>{{p.adress.street + p.adress.city + p.adress.postalCode}}</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</body>
+</html>
